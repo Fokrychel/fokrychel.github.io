@@ -18,7 +18,7 @@ export class ClockInService {
         // 以下非必填
         userlogin: 'activate',
         locale: 'zh_CN',
-        deviceType: 'IPHONE 8P',
+        deviceType: 'IPHONE_8P',
         deviceID: '861141036515765',
       }
     })

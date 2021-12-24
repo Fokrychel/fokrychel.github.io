@@ -1,4 +1,17 @@
+:host{
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
 .clock-in{
+  width: 400px;
   display: flex;
   flex-flow: column nowrap;
+  >input, nz-input-group, button{
+    margin-bottom: 20px;
+  }
+  .err{
+    font-size: 12px;
+    color: #ea3d46;
+  }
 }

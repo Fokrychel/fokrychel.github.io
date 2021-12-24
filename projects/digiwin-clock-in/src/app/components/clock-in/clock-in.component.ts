@@ -10,6 +10,7 @@ import { ClockInService } from './clock-in.service';
 export class ClockInComponent implements OnInit {
   account: string;
   password: string;
+  errorMsg: string;
 
   constructor(private clockInService: ClockInService) {}
 
