@@ -1,0 +1,10 @@
+{
+  "/imgcn": {
+    "target": "http://imgcn.digiwin.com:18090",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/imgcn": ""
+    }
+  }
+}

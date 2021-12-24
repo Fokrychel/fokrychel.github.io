@@ -10,7 +10,7 @@ export class ClockInService {
    * 获取access_token
    * */
   getAccessToken(account: string, password: string): Observable<any> {
-    return this.http.get('imgcn.digiwin.com:18090/oauth/oauth/token', {
+    return this.http.get('/imgcn/oauth/oauth/token', {
       params: {
         username: account,
         password: password,
