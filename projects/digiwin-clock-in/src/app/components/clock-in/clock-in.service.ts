@@ -15,6 +15,9 @@ export class ClockInService {
    * 获取access_token
    * */
   getAccessToken(account: string, password: string): Observable<any> {
+    const authUsername = 'esnMobileClient';
+    const authPassword = 'esnMobile';
+    const authBase64Info = window.btoa(`${authUsername}:${authPassword}`)
     return this.http.get('/imgcn/oauth/oauth/token', {
       params: {
         username: account,
@@ -26,6 +29,9 @@ export class ClockInService {
         deviceType: this.deviceType,
         deviceID: this.deviceID,
       },
+      headers: {
+        Authorization: `Basic ${authBase64Info}`
+      }
     });
   }
 
