@@ -19,7 +19,7 @@ export class ClockInService {
     const authPassword = 'esnMobile';
     const authBase64Info = window.btoa(`${authUsername}:${authPassword}`)
     // return this.http.get('/imgcn/oauth/oauth/token', {
-    return this.http.get('http://imgcn.digiwin.com:18090/oauth/oauth/token', {
+    return this.http.get('imgcn.digiwin.com:18090/oauth/oauth/token', {
       params: {
         username: account,
         password: password,
@@ -42,7 +42,7 @@ export class ClockInService {
    * */
   getUserInfo(access_token: string): Observable<any> {
     // return this.http.get('/imgcn/mobile/person/current', {
-    return this.http.get('http://imgcn.digiwin.com:18090/mobile/person/current', {
+    return this.http.get('imgcn.digiwin.com:18090/mobile/person/current', {
       params: {
         access_token,
         // 以下非必填
@@ -59,7 +59,7 @@ export class ClockInService {
    * */
   getPage(access_token: string): Observable<any> {
     // return this.http.get('/imgcn/r/mp/attendance', {
-    return this.http.get('http://imgcn.digiwin.com:18090/r/mp/attendance', {
+    return this.http.get('imgcn.digiwin.com:18090/r/mp/attendance', {
       params: {
         access_token,
         menuID: this.menuID,
@@ -76,7 +76,7 @@ export class ClockInService {
    * */
   clockIn(cID): Observable<any> {
     // return this.http.post('/imgcn/r/mp/sendCard', {
-    return this.http.post('http://imgcn.digiwin.com:18090/r/mp/sendCard', {
+    return this.http.post('imgcn.digiwin.com:18090/r/mp/sendCard', {
       mobile_token: 'd90643ab-00cc-4904-bfb1-2de6ecd8e746',
       latitude: null,
       longitude: null,
