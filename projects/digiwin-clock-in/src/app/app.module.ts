@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { HttpClientModule } from '@angular/common/http';
+import { HttpClientJsonpModule } from '@angular/common/http';
 import {NzIconModule} from 'ng-zorro-antd/icon';
 import {NzMessageModule} from "ng-zorro-antd/message";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
@@ -18,6 +19,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    HttpClientJsonpModule,
     FormsModule,
     NzInputModule,
     NzButtonModule,

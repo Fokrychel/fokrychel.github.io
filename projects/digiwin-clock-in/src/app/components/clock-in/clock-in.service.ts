@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, JsonpClientBackend } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable()
@@ -9,17 +9,19 @@ export class ClockInService {
   locale: string = 'zh_CN';
   menuID: string = '4369347625589622646';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private jsonp: JsonpClientBackend) {}
 
   /**
    * 获取access_token
+   * https://www.freesion.com/article/9227204075/
    * */
   getAccessToken(account: string, password: string): Observable<any> {
     const authUsername = 'esnMobileClient';
     const authPassword = 'esnMobile';
     const authBase64Info = window.btoa(`${authUsername}:${authPassword}`)
-    // return this.http.get('/imgcn/oauth/oauth/token', {
-    return this.http.get('imgcn.digiwin.com:18090/oauth/oauth/token', {
+    return this.http.get('/imgcn/oauth/oauth/token', {
+    // return this.http.get('imgcn.digiwin.com:18090/oauth/oauth/token', {
+    // return this.http.jsonp('imgcn.digiwin.com:18090/oauth/oauth/token', {
       params: {
         username: account,
         password: password,
@@ -41,8 +43,8 @@ export class ClockInService {
    * @param access_token getAccessToken接口获取
    * */
   getUserInfo(access_token: string): Observable<any> {
-    // return this.http.get('/imgcn/mobile/person/current', {
-    return this.http.get('imgcn.digiwin.com:18090/mobile/person/current', {
+    return this.http.get('/imgcn/mobile/person/current', {
+    // return this.http.get('imgcn.digiwin.com:18090/mobile/person/current', {
       params: {
         access_token,
         // 以下非必填
@@ -58,8 +60,8 @@ export class ClockInService {
    * @param access_token getAccessToken接口获取
    * */
   getPage(access_token: string): Observable<any> {
-    // return this.http.get('/imgcn/r/mp/attendance', {
-    return this.http.get('imgcn.digiwin.com:18090/r/mp/attendance', {
+    return this.http.get('/imgcn/r/mp/attendance', {
+    // return this.http.get('imgcn.digiwin.com:18090/r/mp/attendance', {
       params: {
         access_token,
         menuID: this.menuID,
@@ -75,8 +77,8 @@ export class ClockInService {
    * @param cID 接口getUserInfo返回
    * */
   clockIn(cID): Observable<any> {
-    // return this.http.post('/imgcn/r/mp/sendCard', {
-    return this.http.post('imgcn.digiwin.com:18090/r/mp/sendCard', {
+    return this.http.post('/imgcn/r/mp/sendCard', {
+    // return this.http.post('imgcn.digiwin.com:18090/r/mp/sendCard', {
       mobile_token: 'd90643ab-00cc-4904-bfb1-2de6ecd8e746',
       latitude: null,
       longitude: null,
