@@ -20,8 +20,8 @@ export class ClockInService {
     const authPassword = 'esnMobile';
     const authBase64Info = window.btoa(`${authUsername}:${authPassword}`)
     return this.http.get('/imgcn/oauth/oauth/token', {
-    // return this.http.get('imgcn.digiwin.com:18090/oauth/oauth/token', {
-    // return this.http.jsonp('imgcn.digiwin.com:18090/oauth/oauth/token', {
+    // return this.http.get('imgcn.digiwin.com:18090/oauth/oauth/token', { // 有跨域问题，接口没有设置跨域头
+    // return this.http.jsonp('imgcn.digiwin.com:18090/oauth/oauth/token', { // 接口不支持返回jsonp格式
       params: {
         username: account,
         password: password,

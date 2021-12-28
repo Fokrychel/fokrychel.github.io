@@ -22,7 +22,7 @@ export class ClockInComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  clockIn(): void {
+  go(): void {
     this.isClockIn = true;
     this.clockInService
       .getAccessToken(this.account, this.password)
@@ -41,26 +41,26 @@ export class ClockInComponent implements OnInit {
         })
       )
       .subscribe(
-        () => {
-          this.clockInService.clockIn(this.cId).subscribe((): void => {
-            this.nzMsgService.success('打卡成功');
-            this.isClockIn = false;
-          }, (): void => {
-              this.isClockIn = false;
-          });
+        (res) => {
+            console.log(res);
+         this.doClockIn();
         },
         (err): void => {
           console.log(err);
-          this.clockInService.clockIn(this.cId).subscribe(
-            (): void => {
-              this.nzMsgService.success('打卡成功');
-              this.isClockIn = false;
-            },
-            () => {
-              this.isClockIn = false;
-            }
-          );
+            this.doClockIn();
         }
       );
+  }
+
+  /**
+   * 调打卡接口
+   * */
+  doClockIn(): void {
+      this.clockInService.clockIn(this.cId).subscribe((): void => {
+          this.nzMsgService.success('打卡成功');
+          this.isClockIn = false;
+      }, (): void => {
+          this.isClockIn = false;
+      });
   }
 }
