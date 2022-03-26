@@ -1,0 +1,53 @@
+.wrap > .title {
+  font-size: 20px;
+  color: black;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.wrap > .title span {
+  font-size: 20px;
+  color: #8f8f8f;
+}
+.wrap .item-box {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 10px;
+}
+.wrap .item-box .item {
+  display: flex;
+}
+.wrap .item-box .item .name {
+  width: 230px;
+  flex: 0 0 auto;
+}
+.wrap .item-box .item .price {
+  width: 120px;
+  flex: auto;
+}
+.wrap .container {
+  margin-bottom: 10px;
+}
+.wrap .container .title {
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 10px;
+}
+.wrap .container .title span {
+  font-size: 18px;
+  font-weight: bold;
+  color: #8f8f8f;
+}
+.wrap .hair-cut-wash-blow-detail {
+  margin-bottom: 10px;
+}
+.wrap .care-before-dye-hair .detail {
+  background-color: #8b8b8b;
+  color: white;
+}
+.wrap .care-after-dye-hair .detail {
+  background-color: #8b8b8b;
+  color: white;
+}
