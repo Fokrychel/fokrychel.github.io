@@ -24,10 +24,12 @@
 .wrap .item-box .item .name {
   width: 230px;
   flex: 0 1 auto;
+  text-align: left;
 }
 .wrap .item-box .item .price {
   width: 120px;
   flex: 0 1 auto;
+  text-align: left;
 }
 .wrap .container {
   margin-bottom: 10px;
