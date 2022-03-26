@@ -20,11 +20,11 @@
 }
 .wrap .item-box .item .name {
   width: 230px;
-  flex: 0 0 auto;
+  flex: 0 1 auto;
 }
 .wrap .item-box .item .price {
   width: 120px;
-  flex: auto;
+  flex: 0 1 auto;
 }
 .wrap .container {
   margin-bottom: 10px;
