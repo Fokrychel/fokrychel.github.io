@@ -1,3 +1,6 @@
+.wrap {
+  padding: 15px;
+}
 .wrap > .title {
   font-size: 20px;
   color: black;
