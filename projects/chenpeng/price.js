@@ -27,16 +27,8 @@ function init() {
     //     })
     // });
 
-    // 屏幕旋转
+    // 设备旋转
     window.addEventListener('deviceorientation', function (){
-        alert('deviceorientation' + document.querySelector('.wrap').clientWidth)
-        count = 0;
-        wrapDom.forEach((item) => {
-            item.style.transform = `translateX(0)`;
-        })
-    })
-    window.addEventListener('resize', function (){
-        alert('resize' + document.querySelector('.wrap').clientWidth)
         count = 0;
         wrapDom.forEach((item) => {
             item.style.transform = `translateX(0)`;
