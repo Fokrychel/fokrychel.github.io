@@ -1,0 +1,85 @@
+.swiper {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+.swiper .wrap {
+  padding: 15px;
+  flex: 0 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+  transition: 0.3s;
+}
+.swiper .wrap > .title {
+  font-size: 20px;
+  color: black;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.swiper .wrap > .title span {
+  font-size: 20px;
+  color: #8f8f8f;
+}
+.swiper .wrap .item-box {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 10px;
+}
+.swiper .wrap .item-box .item {
+  display: flex;
+}
+.swiper .wrap .item-box .item .name {
+  width: 230px;
+  flex: 0 1 auto;
+  text-align: left;
+}
+.swiper .wrap .item-box .item .price {
+  width: 120px;
+  flex: 0 1 auto;
+  text-align: left;
+}
+.swiper .wrap .container {
+  margin-bottom: 10px;
+}
+.swiper .wrap .container .title {
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 10px;
+}
+.swiper .wrap .container .title span {
+  font-size: 18px;
+  font-weight: bold;
+  color: #8f8f8f;
+}
+.swiper .wrap .hair-cut-wash-blow-detail {
+  margin-bottom: 10px;
+}
+.swiper .wrap .deep-background .detail {
+  background-color: #8b8b8b;
+  color: white;
+}
+.swiper .pre-arrow,
+.swiper .next-arrow {
+  width: 30px;
+  height: 50px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(171, 174, 207, 0.8);
+}
+.swiper .pre-arrow.disable,
+.swiper .next-arrow.disable {
+  background-color: #dcdded;
+}
+.swiper .pre-arrow {
+  left: 30px;
+  background-image: url("img/swiper-left-arrow.svg");
+}
+.swiper .next-arrow {
+  right: 30px;
+  background-image: url("img/swiper-right-arrow.svg");
+}
+/*# sourceMappingURL=price.css.map */

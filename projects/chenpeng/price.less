@@ -1,0 +1,96 @@
+.swiper{
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  .wrap {
+    padding: 15px;
+    flex: 0 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+    transition: 0.3s;
+
+    > .title {
+      font-size: 20px;
+      color: black;
+      font-weight: bold;
+      margin-bottom: 20px;
+
+      span {
+        font-size: 20px;
+        color: #8f8f8f;
+      }
+    }
+
+    .item-box {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid black;
+      border-radius: 8px;
+      padding: 10px;
+
+      .item {
+        display: flex;
+
+        .name {
+          width: 230px;
+          flex: 0 1 auto;
+          text-align: left;
+        }
+
+        .price {
+          width: 120px;
+          flex: 0 1 auto;
+          text-align: left;
+        }
+      }
+    }
+
+    .container {
+      margin-bottom: 10px;
+
+      .title {
+        font-size: 18px;
+        font-weight: bold;
+        color: black;
+        margin-bottom: 10px;
+
+        span {
+          font-size: 18px;
+          font-weight: bold;
+          color: #8f8f8f;
+        }
+      }
+    }
+
+    .hair-cut-wash-blow-detail {
+      margin-bottom: 10px;
+    }
+
+    .deep-background{
+      .detail {
+        background-color: #8b8b8b;
+        color: white;
+      }
+    }
+  }
+  .pre-arrow,.next-arrow{
+    width: 30px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    &.disable{
+      background-color: #dcdded;
+    }
+    background-color: rgba(rgba(171,174,207,.8));
+  }
+  .pre-arrow{
+    left: 30px;
+    background-image: url("img/swiper-left-arrow.svg");
+  }
+  .next-arrow{
+    right: 30px;
+    background-image: url("img/swiper-right-arrow.svg");
+  }
+}
+
