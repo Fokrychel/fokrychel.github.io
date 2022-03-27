@@ -31,7 +31,7 @@
   display: flex;
 }
 .swiper .wrap .item-box .item .name {
-  width: 240px;
+  width: 250px;
   flex: 0 1 auto;
   text-align: left;
 }

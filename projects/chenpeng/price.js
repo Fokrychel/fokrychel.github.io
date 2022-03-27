@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function init() {
     let count = 0;
-    let width = document.querySelector('.wrap').clientWidth;
     const wrapDom = document.querySelectorAll('.wrap');
     const length = wrapDom.length;
     // 点击
@@ -79,6 +78,8 @@ function init() {
             return;
         }
         count += 1;
+        // 在旋转，resize之后，保证宽度是最新值
+        const width = document.querySelector('.wrap').clientWidth;
         wrapDom.forEach((item) => {
             item.style.transform = `translateX(-${width * count}px)`;
         })
@@ -89,6 +90,8 @@ function init() {
             return;
         }
         count -= 1;
+        // 在旋转，resize之后，保证宽度是最新值
+        const width = document.querySelector('.wrap').clientWidth;
         wrapDom.forEach((item) => {
             item.style.transform = `translateX(-${width * count}px)`;
         })
