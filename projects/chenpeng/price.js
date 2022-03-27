@@ -35,6 +35,13 @@ function init() {
             item.style.transform = `translateX(0)`;
         })
     })
+    window.addEventListener('resize', function (){
+        alert('resize' + document.querySelector('.wrap').clientWidth)
+        count = 0;
+        wrapDom.forEach((item) => {
+            item.style.transform = `translateX(0)`;
+        })
+    })
 
     // 滑动
     let startScreenX = 0, endScreenX = 0;
