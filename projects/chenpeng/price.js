@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function init() {
     let count = 0;
-    const width = document.querySelector('.wrap').clientWidth;
+    let width = document.querySelector('.wrap').clientWidth;
     const wrapDom = document.querySelectorAll('.wrap');
     const length = wrapDom.length;
     // 点击
@@ -27,6 +27,14 @@ function init() {
     //         item.style.transform = `translateX(-${width * count}px)`;
     //     })
     // });
+
+    // 屏幕旋转
+    window.addEventListener('onorientationchange', function (){
+        count = 0;
+        wrapDom.forEach((item) => {
+            item.style.transform = `translateX(0)`;
+        })
+    })
 
     // 滑动
     let startScreenX = 0, endScreenX = 0;
