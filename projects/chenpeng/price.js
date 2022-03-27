@@ -30,6 +30,24 @@ function init() {
 
     // 滑动
     let startScreenX = 0, endScreenX = 0;
+    document.querySelector('.swiper').addEventListener('mousedown', function (event){
+        // 初始化
+        startScreenX = 0;
+        endScreenX = 0;
+        startScreenX = event.screenX;
+    })
+    document.querySelector('.swiper').addEventListener('mouseup', function (event){
+        endScreenX = event.screenX;
+        // 左滑，向右切换
+        if (endScreenX < startScreenX - 20 ) {
+            moveLeft();
+        }
+        // 右滑，向左切换
+        if (endScreenX > startScreenX + 20 ) {
+            moveRight();
+        }
+    })
+
     document.querySelector('.swiper').addEventListener('touchstart', function (event){
         // 初始化
         startScreenX = 0;
@@ -40,23 +58,31 @@ function init() {
         endScreenX = event.changedTouches[0].screenX;
         // 左滑，向右切换
         if (endScreenX < startScreenX - 20 ) {
-            if (count > length - 2) {
-                return;
-            }
-            count += 1;
-            wrapDom.forEach((item) => {
-                item.style.transform = `translateX(-${width * count}px)`;
-            })
+            moveLeft();
         }
         // 右滑，向左切换
         if (endScreenX > startScreenX + 20 ) {
-            if (count === 0) {
-                return;
-            }
-            count -= 1;
-            wrapDom.forEach((item) => {
-                item.style.transform = `translateX(-${width * count}px)`;
-            })
+            moveRight();
         }
     })
+
+    function moveLeft(){
+        if (count > length - 2) {
+            return;
+        }
+        count += 1;
+        wrapDom.forEach((item) => {
+            item.style.transform = `translateX(-${width * count}px)`;
+        })
+    }
+
+    function moveRight(){
+        if (count === 0) {
+            return;
+        }
+        count -= 1;
+        wrapDom.forEach((item) => {
+            item.style.transform = `translateX(-${width * count}px)`;
+        })
+    }
 }
