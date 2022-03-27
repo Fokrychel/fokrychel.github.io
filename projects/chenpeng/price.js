@@ -28,8 +28,8 @@ function init() {
     // });
 
     // 屏幕旋转
-    window.addEventListener('onorientationchange', function (){
-        alert('onorientationchange' + document.querySelector('.wrap').clientWidth)
+    window.addEventListener('deviceorientation', function (){
+        alert('deviceorientation' + document.querySelector('.wrap').clientWidth)
         count = 0;
         wrapDom.forEach((item) => {
             item.style.transform = `translateX(0)`;
